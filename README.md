@@ -17,6 +17,9 @@ Currently, the script includes a limited set of hardcoded companies, which will 
 ```bash
 pip install -r requirements.txt
 ```
+## Usage
+1. Run the script to get data of all companies in the list
+2. Results are saved in output/employee_data.json
 
 ### TODO
 
