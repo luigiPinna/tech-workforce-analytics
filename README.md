@@ -17,3 +17,25 @@ Currently, the script includes a limited set of hardcoded companies, which will 
 ```bash
 pip install -r requirements.txt
 ```
+
+### TODO
+
+#### BE:
+- refactor to OOP pattern (this was only a test)
+- Error handling and retry mechanism for web scraping
+- Caching strategy for scraped data
+- Rate limiting to respect website scraping policies
+- Logging performance metrics
+- Containerization (Docker)
+- Unit and integration tests
+- log handler
+- database configuration (sql alchemy - pydantic models)
+- push employees data into database
+- APi development (FastAPI) with security (jwt? - tbd) to retrieve data
+- Scheduled data updates (e.g., using Celery)
+- deploy with aws
+- think about new data to be displayed/scraped
+
+#### FE:
+- UI study
+- UI development
