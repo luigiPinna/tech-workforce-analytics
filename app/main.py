@@ -3,28 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 
-# Dizionario delle aziende con i loro ticker e nomi per Macrotrends
-COMPANIES = {
-    "AMZN": "amazon",
-    "META": "meta-platforms",
-    "IBM": "ibm",
-    "MSFT": "microsoft",
-    "TSLA": "tesla",
-    "GOOGL": "alphabet",
-    "AAPL": "apple",
-    "NFLX": "netflix",
-    "NVDA": "nvidia",
-    "CRM": "salesforce",
-    "INTC": "intel",
-    "CSCO": "cisco",
-    "ORCL": "oracle",
-    "ADBE": "adobe",
-    "PYPL": "paypal",
-    "UBER": "uber-technologies",
-    "SNAP": "snap",
-    "SQ": "square"
-}
-
+from constants.companies import COMPANIES
 
 def scrape_employee_data(company_ticker):
     if company_ticker not in COMPANIES:
@@ -95,8 +74,8 @@ def scrape_all_companies():
             print(f"Impossibile recuperare dati per {company_name}")
 
     # Salva i risultati in un file JSON
-    os.makedirs('output', exist_ok=True)
-    output_file = 'output/employee_data.json'
+    os.makedirs('../output', exist_ok=True)
+    output_file = '../output/employee_data.json'
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=4)
 
