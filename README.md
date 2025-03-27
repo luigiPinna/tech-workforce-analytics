@@ -1,9 +1,17 @@
 # Tech Workforce Analytics
 
-A modern web application for visualizing and analyzing employee data across major tech companies. Built with React, Vite, and Tailwind CSS.
+A modern web application for visualizing and analyzing employee data across major tech companies. The project consists of a Python backend for data scraping and a React frontend for data visualization.
 
 ## Features
 
+### Backend
+- 🔍 Automated data scraping from company reports
+- 📊 Data processing and normalization
+- 💾 JSON data storage
+- 🔄 Scheduled data updates
+- 🛡️ Error handling and retry mechanisms
+
+### Frontend
 - 📊 Interactive dashboard showing key metrics
 - 📈 Detailed company-specific analytics
 - 🎨 Modern, responsive UI with Tailwind CSS
@@ -14,7 +22,15 @@ A modern web application for visualizing and analyzing employee data across majo
 
 ## Tech Stack
 
-- **Frontend Framework**: React
+### Backend
+- **Language**: Python 3.12
+- **Web Scraping**: BeautifulSoup4, yfinance
+- **Data Processing**: pandas, numpy
+- **Data Storage**: JSON
+- **Environment Management**: python-dotenv
+
+### Frontend
+- **Framework**: React
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **Charts**: Chart.js
@@ -24,22 +40,28 @@ A modern web application for visualizing and analyzing employee data across majo
 
 ```
 tech-workforce-analytics/
-├── frontend/                 # Frontend React application
+├── app/                     # Backend Python application
+│   ├── config/             # Configuration files
+│   ├── constants/          # Constants and configurations
+│   └── main.py            # Main scraping script
+├── frontend/               # Frontend React application
 │   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── App.jsx         # Main application component
-│   │   └── index.css       # Global styles
-│   ├── public/             # Static assets
-│   └── package.json        # Frontend dependencies
-├── output/                  # Data files
-│   └── employee_data.json  # Employee data
-└── README.md               # Project documentation
+│   │   ├── components/    # React components
+│   │   ├── App.jsx       # Main application component
+│   │   └── index.css     # Global styles
+│   ├── public/           # Static assets
+│   └── package.json      # Frontend dependencies
+├── output/                # Data files
+│   └── employee_data.json # Employee data
+├── requirements.txt       # Python dependencies
+└── README.md             # Project documentation
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
+- Python 3.12
 - Node.js (v18 or higher)
 - npm (v9 or higher)
 
@@ -51,29 +73,49 @@ git clone https://github.com/yourusername/tech-workforce-analytics.git
 cd tech-workforce-analytics
 ```
 
-2. Install frontend dependencies:
+2. Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Install frontend dependencies:
 ```bash
 cd frontend
 npm install
 ```
 
-3. Start the development server:
+4. Start the frontend development server:
 ```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5174`
+5. Run the data scraping script:
+```bash
+python app/main.py
+```
+
+6. Open your browser and navigate to `http://localhost:5174`
 
 ## Features in Detail
 
-### Dashboard View
+### Backend Features
+- Automated scraping of employee data from company reports
+- Data normalization and processing
+- Error handling and retry mechanisms
+- Rate limiting to respect website policies
+- Data validation and cleaning
+- JSON data storage
+
+### Frontend Features
+
+#### Dashboard View
 - Overview of all companies
 - Total employee count across companies
 - Average growth rate
 - Interactive company cards
 - Growth rate comparison chart
 
-### Company Detail View
+#### Company Detail View
 - Historical employee count data
 - Year-over-year growth rates
 - Interactive line charts
@@ -115,3 +157,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Data source: Company annual reports and public filings
 - Icons: Heroicons
 - Charts: Chart.js
+- Web Scraping: BeautifulSoup4, yfinance
